@@ -7,7 +7,8 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isSignedIn: false
+      route: 'home',
+      isSignedIn: true
     };
   }
 
@@ -17,7 +18,7 @@ class App extends Component {
     } else if (route === "signout") {
       this.setState({ isSignedIn: false });
     }
-    this.setState({ route: route });
+    this.setState({ route: "home" });
   };
 
   render() {
