@@ -12,6 +12,18 @@ import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
 
+function Copyright() {
+  return (
+    <Typography variant="body2" color="textSecondary" align="center">
+      {"Copyright © "}
+      <Link color="inherit" href="https://covenworks.com/">
+        Coven Works
+      </Link>{" "}
+      {new Date().getFullYear()}
+      {"."}
+    </Typography>
+  );
+}
 class SignIn extends Component {
   constructor(props) {
     super(props);
@@ -89,14 +101,7 @@ class SignIn extends Component {
           </form>
         </div>
         <Box mt={8}>
-          <Typography variant="body2" color="textSecondary" align="center">
-            {"Copyright © "}
-            <Link color="inherit" href="https://covenworks.com/">
-              Coven Works
-            </Link>{" "}
-            {new Date().getFullYear()}
-            {"."}
-          </Typography>
+          <Copyright />
         </Box>
       </Container>
     );
