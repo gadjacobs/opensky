@@ -60,14 +60,13 @@ const styles = (theme) => ({
   }
 });
 
-const cards = [1];
-
 class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {};
   }
   render() {
+    const cards = this.props.states.slice(0, 10);
     const { classes } = this.props;
     return (
       <React.Fragment>
@@ -108,7 +107,7 @@ class Home extends Component {
           <Container className={classes.cardGrid} maxWidth="md">
             {/* End hero unit */}
             <Grid container spacing={4}>
-              {cards.map((card) => (
+              {cards.map((card, i) => (
                 <Grid item key={card} xs={12} sm={6} md={4}>
                   <Card className={classes.card}>
                     <CardMedia
@@ -118,11 +117,10 @@ class Home extends Component {
                     />
                     <CardContent className={classes.cardContent}>
                       <Typography gutterBottom variant="h5" component="h2">
-                        Heading
+                        {`${cards[i][2]}`}
                       </Typography>
                       <Typography>
-                        This is a media card. You can use this section to
-                        describe the content.
+                        {`ICAO Number: ${cards[i][0]} and call sign: ${cards[i][1]}`}
                       </Typography>
                     </CardContent>
                     <CardActions>

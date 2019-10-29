@@ -7,9 +7,16 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      route: 'home',
+      cities: [],
+      route: "home",
       isSignedIn: true
     };
+  }
+
+  componentDidMount() {
+    fetch("https://opensky-network.org/api/states/all")
+      .then((response) => response.json())
+      .then((states) => this.setState({ cities: states.states }));
   }
 
   onRouteChange = (route) => {
@@ -25,7 +32,7 @@ class App extends Component {
     return (
       <div>
         {this.state.route === "home" ? (
-          <Home />
+          <Home states={this.state.cities} />
         ) : (
           <div className="App">
             <header className="App-header">
