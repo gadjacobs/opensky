@@ -1,0 +1,276 @@
+dependencies:
+  '@material-ui/core': 4.5.2
+packages:
+  /@babel/runtime/7.6.3:
+    dependencies:
+      regenerator-runtime: 0.13.3
+    dev: false
+    resolution:
+      integrity: sha512-kq6anf9JGjW8Nt5rYfEuGRaEAaH1mkv3Bbu6rYvLOpPh/RusSJXuKPEAoZ7L7gybZkchE8+NV5g9vKF4AGAtsA==
+  /@emotion/hash/0.7.3:
+    dev: false
+    resolution:
+      integrity: sha512-14ZVlsB9akwvydAdaEnVnvqu6J2P6ySv39hYyl/aoB6w/V+bXX0tay8cF6paqbgZsN2n5Xh15uF4pE+GvE+itw==
+  /@material-ui/core/4.5.2:
+    dependencies:
+      '@babel/runtime': 7.6.3
+      '@material-ui/styles': 4.5.2
+      '@material-ui/system': 4.5.2
+      '@material-ui/types': 4.1.1
+      '@material-ui/utils': 4.5.2
+      '@types/react-transition-group': 4.2.3
+      clsx: 1.0.4
+      convert-css-length: 2.0.1
+      hoist-non-react-statics: 3.3.0
+      normalize-scroll-left: 0.2.0
+      popper.js: 1.16.0
+      prop-types: 15.7.2
+      react-transition-group: 4.3.0
+    dev: false
+    engines:
+      node: '>=8.0.0'
+    peerDependencies:
+      react: ^16.8.0
+      react-dom: ^16.8.0
+    resolution:
+      integrity: sha512-yARw/hwavOXqljP+biDXHcmfbC63n8EkA8C10/tZt7KkBp7fs+7+z3BNR+ffotd8/uhirIC1jQWWKdLoUc34yA==
+  /@material-ui/styles/4.5.2:
+    dependencies:
+      '@babel/runtime': 7.6.3
+      '@emotion/hash': 0.7.3
+      '@material-ui/types': 4.1.1
+      '@material-ui/utils': 4.5.2
+      clsx: 1.0.4
+      csstype: 2.6.7
+      hoist-non-react-statics: 3.3.0
+      jss: 10.0.0
+      jss-plugin-camel-case: 10.0.0
+      jss-plugin-default-unit: 10.0.0
+      jss-plugin-global: 10.0.0
+      jss-plugin-nested: 10.0.0
+      jss-plugin-props-sort: 10.0.0
+      jss-plugin-rule-value-function: 10.0.0
+      jss-plugin-vendor-prefixer: 10.0.0
+      prop-types: 15.7.2
+    dev: false
+    engines:
+      node: '>=8.0.0'
+    peerDependencies:
+      react: ^16.8.0
+      react-dom: ^16.8.0
+    resolution:
+      integrity: sha512-QUqPk4tdPiDLs/1flB6qdAqUrYSxHv4YLCgvFeZw9A9OK/lf8LFjciF/SsSIDOCwoV2kf3BiGTzWUGjb/TTgzA==
+  /@material-ui/system/4.5.2:
+    dependencies:
+      '@babel/runtime': 7.6.3
+      '@material-ui/utils': 4.5.2
+      prop-types: 15.7.2
+    dev: false
+    engines:
+      node: '>=8.0.0'
+    peerDependencies:
+      react: ^16.8.0
+      react-dom: ^16.8.0
+    resolution:
+      integrity: sha512-h9RWvdM9XKlHHqwiuhyvWdobptQkHli+m2jJFs7i1AI/hmGsIc4reDmS7fInhETgt/Txx7uiAIznfRNIIVHmQw==
+  /@material-ui/types/4.1.1:
+    dependencies:
+      '@types/react': 16.9.11
+    dev: false
+    resolution:
+      integrity: sha512-AN+GZNXytX9yxGi0JOfxHrRTbhFybjUJ05rnsBVjcB+16e466Z0Xe5IxawuOayVZgTBNDxmPKo5j4V6OnMtaSQ==
+  /@material-ui/utils/4.5.2:
+    dependencies:
+      '@babel/runtime': 7.6.3
+      prop-types: 15.7.2
+      react-is: 16.11.0
+    dev: false
+    engines:
+      node: '>=8.0.0'
+    peerDependencies:
+      react: ^16.8.0
+      react-dom: ^16.8.0
+    resolution:
+      integrity: sha512-zhbNfHd1gLa8At6RPDG7uMZubHxbY+LtM6IkSfeWi6Lo4Ax80l62YaN1QmUpO1IvGCkn/j62tQX3yObiQZrJsQ==
+  /@types/prop-types/15.7.3:
+    dev: false
+    resolution:
+      integrity: sha512-KfRL3PuHmqQLOG+2tGpRO26Ctg+Cq1E01D2DMriKEATHgWLfeNDmq9e29Q9WIky0dQ3NPkd1mzYH8Lm936Z9qw==
+  /@types/react-transition-group/4.2.3:
+    dependencies:
+      '@types/react': 16.9.11
+    dev: false
+    resolution:
+      integrity: sha512-Hk8jiuT7iLOHrcjKP/ZVSyCNXK73wJAUz60xm0mVhiRujrdiI++j4duLiL282VGxwAgxetHQFfqA29LgEeSkFA==
+  /@types/react/16.9.11:
+    dependencies:
+      '@types/prop-types': 15.7.3
+      csstype: 2.6.7
+    dev: false
+    resolution:
+      integrity: sha512-UBT4GZ3PokTXSWmdgC/GeCGEJXE5ofWyibCcecRLUVN2ZBpXQGVgQGtG2foS7CrTKFKlQVVswLvf7Js6XA/CVQ==
+  /clsx/1.0.4:
+    dev: false
+    engines:
+      node: '>=6'
+    resolution:
+      integrity: sha512-1mQ557MIZTrL/140j+JVdRM6e31/OA4vTYxXgqIIZlndyfjHpyawKZia1Im05Vp9BWmImkcNrNtFYQMyFcgJDg==
+  /convert-css-length/2.0.1:
+    dev: false
+    resolution:
+      integrity: sha512-iGpbcvhLPRKUbBc0Quxx7w/bV14AC3ItuBEGMahA5WTYqB8lq9jH0kTXFheCBASsYnqeMFZhiTruNxr1N59Axg==
+  /css-vendor/2.0.7:
+    dependencies:
+      '@babel/runtime': 7.6.3
+      is-in-browser: 1.1.3
+    dev: false
+    resolution:
+      integrity: sha512-VS9Rjt79+p7M0WkPqcAza4Yq1ZHrsHrwf7hPL/bjQB+c1lwmAI+1FXxYTYt818D/50fFVflw0XKleiBN5RITkg==
+  /csstype/2.6.7:
+    dev: false
+    resolution:
+      integrity: sha512-9Mcn9sFbGBAdmimWb2gLVDtFJzeKtDGIr76TUqmjZrw9LFXBMSU70lcs+C0/7fyCd6iBDqmksUcCOUIkisPHsQ==
+  /dom-helpers/5.1.3:
+    dependencies:
+      '@babel/runtime': 7.6.3
+      csstype: 2.6.7
+    dev: false
+    resolution:
+      integrity: sha512-nZD1OtwfWGRBWlpANxacBEZrEuLa16o1nh7YopFWeoF68Zt8GGEmzHu6Xv4F3XaFIC+YXtTLrzgqKxFgLEe4jw==
+  /hoist-non-react-statics/3.3.0:
+    dependencies:
+      react-is: 16.11.0
+    dev: false
+    resolution:
+      integrity: sha512-0XsbTXxgiaCDYDIWFcwkmerZPSwywfUqYmwT4jzewKTQSWoE6FCMoUVOeBJWK3E/CrWbxRG3m5GzY4lnIwGRBA==
+  /hyphenate-style-name/1.0.3:
+    dev: false
+    resolution:
+      integrity: sha512-EcuixamT82oplpoJ2XU4pDtKGWQ7b00CD9f1ug9IaQ3p1bkHMiKCZ9ut9QDI6qsa6cpUuB+A/I+zLtdNK4n2DQ==
+  /is-in-browser/1.1.3:
+    dev: false
+    resolution:
+      integrity: sha1-Vv9NtoOgeMYILrldrX3GLh0E+DU=
+  /js-tokens/4.0.0:
+    dev: false
+    resolution:
+      integrity: sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==
+  /jss-plugin-camel-case/10.0.0:
+    dependencies:
+      '@babel/runtime': 7.6.3
+      hyphenate-style-name: 1.0.3
+      jss: 10.0.0
+    dev: false
+    resolution:
+      integrity: sha512-yALDL00+pPR4FJh+k07A8FeDvfoPPuXU48HLy63enAubcVd3DnS+2rgqPXglHDGixIDVkCSXecl/l5GAMjzIbA==
+  /jss-plugin-default-unit/10.0.0:
+    dependencies:
+      '@babel/runtime': 7.6.3
+      jss: 10.0.0
+    dev: false
+    resolution:
+      integrity: sha512-sURozIOdCtGg9ap18erQ+ijndAfEGtTaetxfU3H4qwC18Bi+fdvjlY/ahKbuu0ASs7R/+WKCP7UaRZOjUDMcdQ==
+  /jss-plugin-global/10.0.0:
+    dependencies:
+      '@babel/runtime': 7.6.3
+      jss: 10.0.0
+    dev: false
+    resolution:
+      integrity: sha512-80ofWKSQUo62bxLtRoTNe0kFPtHgUbAJeOeR36WEGgWIBEsXLyXOnD5KNnjPqG4heuEkz9eSLccjYST50JnI7Q==
+  /jss-plugin-nested/10.0.0:
+    dependencies:
+      '@babel/runtime': 7.6.3
+      jss: 10.0.0
+      tiny-warning: 1.0.3
+    dev: false
+    resolution:
+      integrity: sha512-waxxwl/po1hN3azTyixKnr8ReEqUv5WK7WsO+5AWB0bFndML5Yqnt8ARZ90HEg8/P6WlqE/AB2413TkCRZE8bA==
+  /jss-plugin-props-sort/10.0.0:
+    dependencies:
+      '@babel/runtime': 7.6.3
+      jss: 10.0.0
+    dev: false
+    resolution:
+      integrity: sha512-41mf22CImjwNdtOG3r+cdC8+RhwNm616sjHx5YlqTwtSJLyLFinbQC/a4PIFk8xqf1qpFH1kEAIw+yx9HaqZ3g==
+  /jss-plugin-rule-value-function/10.0.0:
+    dependencies:
+      '@babel/runtime': 7.6.3
+      jss: 10.0.0
+    dev: false
+    resolution:
+      integrity: sha512-Jw+BZ8JIw1f12V0SERqGlBT1JEPWax3vuZpMym54NAXpPb7R1LYHiCTIlaJUyqvIfEy3kiHMtgI+r2whGgRIxQ==
+  /jss-plugin-vendor-prefixer/10.0.0:
+    dependencies:
+      '@babel/runtime': 7.6.3
+      css-vendor: 2.0.7
+      jss: 10.0.0
+    dev: false
+    resolution:
+      integrity: sha512-qslqvL0MUbWuzXJWdUxpj6mdNUX8jr4FFTo3aZnAT65nmzWL7g8oTr9ZxmTXXgdp7ANhS1QWE7036/Q2isFBpw==
+  /jss/10.0.0:
+    dependencies:
+      '@babel/runtime': 7.6.3
+      csstype: 2.6.7
+      is-in-browser: 1.1.3
+      tiny-warning: 1.0.3
+    dev: false
+    resolution:
+      integrity: sha512-TPpDFsiBjuERiL+dFDq8QCdiF9oDasPcNqCKLGCo/qED3fNYOQ8PX2lZhknyTiAt3tZrfOFbb0lbQ9lTjPZxsQ==
+  /loose-envify/1.4.0:
+    dependencies:
+      js-tokens: 4.0.0
+    dev: false
+    hasBin: true
+    resolution:
+      integrity: sha512-lyuxPGr/Wfhrlem2CL/UcnUc1zcqKAImBDzukY7Y5F/yQiNdko6+fRLevlw1HgMySw7f611UIY408EtxRSoK3Q==
+  /normalize-scroll-left/0.2.0:
+    dev: false
+    resolution:
+      integrity: sha512-t5oCENZJl8TGusJKoCJm7+asaSsPuNmK6+iEjrZ5TyBj2f02brCRsd4c83hwtu+e5d4LCSBZ0uoDlMjBo+A8yA==
+  /object-assign/4.1.1:
+    dev: false
+    engines:
+      node: '>=0.10.0'
+    resolution:
+      integrity: sha1-IQmtx5ZYh8/AXLvUQsrIv7s2CGM=
+  /popper.js/1.16.0:
+    dev: false
+    resolution:
+      integrity: sha512-+G+EkOPoE5S/zChTpmBSSDYmhXJ5PsW8eMhH8cP/CQHMFPBG/kC9Y5IIw6qNYgdJ+/COf0ddY2li28iHaZRSjw==
+  /prop-types/15.7.2:
+    dependencies:
+      loose-envify: 1.4.0
+      object-assign: 4.1.1
+      react-is: 16.11.0
+    dev: false
+    resolution:
+      integrity: sha512-8QQikdH7//R2vurIJSutZ1smHYTcLpRWEOlHnzcWHmBYrOGUysKwSsrC89BCiFj3CbrfJ/nXFdJepOVrY1GCHQ==
+  /react-is/16.11.0:
+    dev: false
+    resolution:
+      integrity: sha512-gbBVYR2p8mnriqAwWx9LbuUrShnAuSCNnuPGyc7GJrMVQtPDAh8iLpv7FRuMPFb56KkaVZIYSz1PrjI9q0QPCw==
+  /react-transition-group/4.3.0:
+    dependencies:
+      '@babel/runtime': 7.6.3
+      dom-helpers: 5.1.3
+      loose-envify: 1.4.0
+      prop-types: 15.7.2
+    dev: false
+    peerDependencies:
+      react: '>=16.6.0'
+      react-dom: '>=16.6.0'
+    resolution:
+      integrity: sha512-1qRV1ZuVSdxPlPf4O8t7inxUGpdyO5zG9IoNfJxSO0ImU2A1YWkEQvFPuIPZmMLkg5hYs7vv5mMOyfgSkvAwvw==
+  /regenerator-runtime/0.13.3:
+    dev: false
+    resolution:
+      integrity: sha512-naKIZz2GQ8JWh///G7L3X6LaQUAMp2lvb1rvwwsURe/VXwD6VMfr+/1NuNw3ag8v2kY1aQ/go5SNn79O9JU7yw==
+  /tiny-warning/1.0.3:
+    dev: false
+    resolution:
+      integrity: sha512-lBN9zLN/oAf68o3zNXYrdCt1kP8WsiGW8Oo2ka41b2IM5JL/S1CTyX1rW0mb/zSuJun0ZUrDxx4sqvYS2FWzPA==
+registry: 'https://registry.npmjs.org/'
+shrinkwrapMinorVersion: 9
+shrinkwrapVersion: 3
+specifiers:
+  '@material-ui/core': ^4.5.2
