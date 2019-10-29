@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import '../App.css';
+import "../App.css";
 import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
 import CssBaseline from "@material-ui/core/CssBaseline";
@@ -7,7 +7,6 @@ import TextField from "@material-ui/core/TextField";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Checkbox from "@material-ui/core/Checkbox";
 import Link from "@material-ui/core/Link";
-import Grid from "@material-ui/core/Grid";
 import Box from "@material-ui/core/Box";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Typography from "@material-ui/core/Typography";
@@ -30,17 +29,21 @@ class SignIn extends Component {
     this.setState({ password: event.target.value });
   };
 
-  onSubmitClick = () => {};
+  onSubmitClick = () => {
+    if (this.state.username === "demo" && this.state.password === "demo") {
+      this.props.onRouteChange("home");
+    }
+  };
 
   render() {
     return (
       <Container component="main" maxWidth="xs">
         <CssBaseline />
-        <div className="paper" >
+        <div className="paper">
           <Avatar className="avatar">
             <LockOutlinedIcon />
           </Avatar>
-          <Typography style={{ color: "black"}} component="h1" variant="h5">
+          <Typography style={{ color: "black" }} component="h1" variant="h5">
             Sign in
           </Typography>
           <form className="form" noValidate>
@@ -54,6 +57,7 @@ class SignIn extends Component {
               name="username"
               autoComplete="username"
               autoFocus
+              onChange={this.onUserNameChange}
             />
             <TextField
               variant="outlined"
@@ -65,10 +69,12 @@ class SignIn extends Component {
               type="password"
               id="password"
               autoComplete="current-password"
+              onChange={this.onPasswordChange}
             />
             <FormControlLabel
               control={<Checkbox value="remember" color="primary" />}
-              label="Remember me" style={{ color: "black"}}
+              label="Remember me"
+              style={{ color: "black" }}
             />
             <Button
               type="submit"
@@ -76,13 +82,21 @@ class SignIn extends Component {
               variant="contained"
               color="primary"
               className="submit"
+              onClick={this.onSubmitClick}
             >
               Sign In
             </Button>
           </form>
         </div>
         <Box mt={8}>
-          {/* <Copyright /> */}
+          <Typography variant="body2" color="textSecondary" align="center">
+            {"Copyright © "}
+            <Link color="inherit" href="https://covenworks.com/">
+              Coven Works
+            </Link>{" "}
+            {new Date().getFullYear()}
+            {"."}
+          </Typography>
         </Box>
       </Container>
     );
