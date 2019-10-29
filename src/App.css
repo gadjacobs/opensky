@@ -7,7 +7,6 @@
 }
 
 .App-header {
-  background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -19,4 +18,29 @@
 
 .App-link {
   color: #09d3ac;
+}
+
+body {
+  background-color: white;
+}
+
+.paper {
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.avatar {
+  margin: 1px;
+  background-color: rgb(220, 0, 78) !important;
+}
+
+.form {
+  width: "100%";
+  margin-top: 5px;
+}
+
+.submit {
+  margin: "3px 0 2px";
 }
