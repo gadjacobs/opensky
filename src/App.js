@@ -8,7 +8,7 @@ class App extends Component {
     super(props);
     this.state = {
       cities: [],
-      route: "home",
+      route: "",
       isSignedIn: true
     };
   }
@@ -25,7 +25,7 @@ class App extends Component {
     } else if (route === "signout") {
       this.setState({ isSignedIn: false });
     }
-    this.setState({ route: "home" });
+    this.setState({ route: route });
   };
 
   render() {
