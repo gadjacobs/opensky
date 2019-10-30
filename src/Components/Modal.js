@@ -32,17 +32,20 @@ export default function SimpleModal({ icao }) {
   const classes = useStyles();
   const [modalStyle] = React.useState(getModalStyle);
   const [open, setOpen] = React.useState(false);
-  const [flights, setFlights] = React.useState({});
+  const [flights, setFlights] = React.useState([]);
+
+  async function fetchFlights(icao, start, end) {
+    const res = await fetch(
+      `https://opensky-network.org/api/flights/aircraft?icao24=${icao}&begin=1517184000&end=1517270400`
+    );
+    res
+      .json()
+      .then((res) => setFlights(res))
+      .catch((err) => console.log(err));
+  }
 
   const handleOpen = () => {
-    fetch(
-      `https://opensky-network.org/api/flights/aircraft?icao24=${icao}&begin=1517184000&end=1517270400`
-    )
-      .then((response) => response.json())
-      .then((flight) => {
-        setFlights(flight);
-        console.log(flights);
-      });
+    fetchFlights(icao);
     setOpen(true);
   };
 
@@ -63,9 +66,12 @@ export default function SimpleModal({ icao }) {
       >
         <div style={modalStyle} className={classes.paper}>
           <h2 id="simple-modal-title">{`Aircraft: ${icao}`}</h2>
-          <p id="simple-modal-description">
-            {`Number of Flights: ${flights.length}`}
-          </p>
+          <h4>Flights Today:</h4>
+          {flights.map((flight, i) => (
+            <p id="simple-modal-description">
+              {flight !== undefined || [] ? flight.callsign : flight.length === 0 ? "There are no flights within this period. Please check again later" : "Loading Flights"}
+            </p>
+          ))}
         </div>
       </Modal>
     </div>
