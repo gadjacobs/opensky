@@ -68,13 +68,6 @@ class Home extends Component {
       flights: []
     };
   }
-  airportArrivals = (icao, start, end) => {
-    fetch(
-      `https://opensky-network.org/api/flights/aircraft?icao24=7c6b2d&begin=1517184000&end=1517270400`
-    )
-      .then((response) => response.json())
-      .then((flights) => this.setState({ flights: flights }));
-  };
 
   componentDidMount() {
     console.log(this.state.flights);
@@ -140,8 +133,7 @@ class Home extends Component {
                       </Typography>
                     </CardContent>
                     <CardActions>
-
-                        <SimpleModal icao={cards[i][0]} />
+                      <SimpleModal icao={cards[i][0]} />
                     </CardActions>
                   </Card>
                 </Grid>
