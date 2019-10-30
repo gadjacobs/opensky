@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import AppBar from "@material-ui/core/AppBar";
-import Button from "@material-ui/core/Button";
+// import Button from "@material-ui/core/Button";
 import FlightIcon from "@material-ui/icons/FlightSharp";
 import Card from "@material-ui/core/Card";
 import CardActions from "@material-ui/core/CardActions";
@@ -14,6 +14,7 @@ import { withStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import Link from "@material-ui/core/Link";
 import PropTypes from "prop-types";
+import SimpleModal from "./Modal";
 
 function Copyright() {
   return (
@@ -63,7 +64,20 @@ const styles = (theme) => ({
 class Home extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      flights: []
+    };
+  }
+  airportArrivals = (icao, start, end) => {
+    fetch(
+      `https://opensky-network.org/api/flights/aircraft?icao24=7c6b2d&begin=1517184000&end=1517270400`
+    )
+      .then((response) => response.json())
+      .then((flights) => this.setState({ flights: flights }));
+  };
+
+  componentDidMount() {
+    console.log(this.state.flights);
   }
   render() {
     const cards = this.props.states.slice(0, 10);
@@ -120,13 +134,14 @@ class Home extends Component {
                         {`${cards[i][2]}`}
                       </Typography>
                       <Typography>
-                        {`ICAO Number: ${cards[i][0]} and call sign: ${cards[i][1]}`}
+                        {`ICAO Number: ${cards[i][0]} and call sign: ${
+                          cards[i][1]
+                        }`}
                       </Typography>
                     </CardContent>
                     <CardActions>
-                      <Button size="small" color="primary">
-                        View
-                      </Button>
+
+                        <SimpleModal icao={cards[i][0]} />
                     </CardActions>
                   </Card>
                 </Grid>
