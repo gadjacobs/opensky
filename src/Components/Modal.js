@@ -76,7 +76,7 @@ export default function SimpleModal({ icao }) {
 
   return (
     <div>
-      <button size="small" color="primary" onClick={handleOpen}>
+      <button size="small" color="secondary" onClick={handleOpen}>
         View More
       </button>
       <Modal
