@@ -1,9 +1,22 @@
 import React, { Component } from "react";
 import "./App.css";
-import Home from "./Components/Home";
+import Dashboard from './Components/Dashboard';
 import SignIn from "./Components/SignIn";
 
-const icaos = ['VHHH', 'KATL', 'ZBAA', 'KLAX', 'RJTT', 'OMDB', 'KORD', 'EGLL', 'ZSPD', 'LFPG']
+const icaos = [
+  "VHHH",
+  "KATL",
+  "ZBAA",
+  "KLAX",
+  "RJTT",
+  "OMDB",
+  "KORD",
+  "EGLL",
+  "ZSPD",
+  "LFPG"
+];
+
+const names = [];
 
 class App extends Component {
   constructor(props) {
@@ -15,10 +28,35 @@ class App extends Component {
     };
   }
 
-  componentDidMount() {
-    fetch("https://opensky-network.org/api/states/all")
+  airportList = (icao) => {
+    fetch(`https://airport-info.p.rapidapi.com/airport?icao=${icao}`, {
+      method: "GET",
+      headers: {
+        "x-rapidapi-host": "airport-info.p.rapidapi.com",
+        "x-rapidapi-key": "ac60c9fd4fmsh2e2f091de78beb3p109374jsnc3811b15c3e5"
+      }
+    })
       .then((response) => response.json())
-      .then((states) => this.setState({ cities: states.states }));
+      .then((response) => {
+          var obj = {};
+          obj["name"] = response.name;
+          obj["icao"] = response.icao;
+          obj["location"] = response.location;
+
+          names.push(obj);
+          this.setState({ cities: names })
+      });
+  };
+
+  city = () => {
+    icaos.map((icao) => this.airportList(icao));
+  }
+
+  componentDidMount() {
+    // fetch("https://opensky-network.org/api/states/all")
+    //   .then((response) => response.json())
+    //   .then((states) => this.setState({ cities: states.states }));
+    this.city();
   }
 
   onRouteChange = (route) => {
@@ -34,7 +72,7 @@ class App extends Component {
     return (
       <div>
         {this.state.route === "home" ? (
-          <Home onRouteChange={this.onRouteChange} states={this.state.cities} />
+          <Dashboard onRouteChange={this.onRouteChange} names={this.state.cities} />
         ) : (
           <div className="App">
             <header className="App-header">
