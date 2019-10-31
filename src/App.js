@@ -3,6 +3,8 @@ import "./App.css";
 import Home from "./Components/Home";
 import SignIn from "./Components/SignIn";
 
+const icaos = ['VHHH', 'KATL', 'ZBAA', 'KLAX', 'RJTT', 'OMDB', 'KORD', 'EGLL', 'ZSPD', 'LFPG']
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -32,7 +34,7 @@ class App extends Component {
     return (
       <div>
         {this.state.route === "home" ? (
-          <Home states={this.state.cities} />
+          <Home onRouteChange={this.onRouteChange} states={this.state.cities} />
         ) : (
           <div className="App">
             <header className="App-header">

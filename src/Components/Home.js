@@ -15,6 +15,8 @@ import Container from "@material-ui/core/Container";
 import Link from "@material-ui/core/Link";
 import PropTypes from "prop-types";
 import SimpleModal from "./Modal";
+import Button from "@material-ui/core/Button";
+import IconButton from "@material-ui/core/IconButton";
 
 function Copyright() {
   return (
@@ -29,9 +31,30 @@ function Copyright() {
   );
 }
 
+function airportList(icao) {
+    fetch(`https://airport-info.p.rapidapi.com/airport?icao=${icao}`, {
+        method: "GET",
+        headers: {
+          "x-rapidapi-host": "airport-info.p.rapidapi.com",
+          "x-rapidapi-key": "ac60c9fd4fmsh2e2f091de78beb3p109374jsnc3811b15c3e5"
+        }
+      })
+        .then((response) => response.json())
+        .then((states) => this.setState({ cities: states.states }));
+  }
+
 const styles = (theme) => ({
   icon: {
     marginRight: theme.spacing(2)
+  },
+  root: {
+    flexGrow: 1,
+  },
+  flightIcon: {
+    marginRight: theme.spacing(2),
+  },
+  title: {
+    flexGrow: 1,
   },
   heroContent: {
     backgroundColor: theme.palette.background.paper,
@@ -69,6 +92,10 @@ class Home extends Component {
     };
   }
 
+  onSubmitClick = () => {
+      this.props.onRouteChange("signin");
+  };
+
   componentDidMount() {
     console.log(this.state.flights);
   }
@@ -78,12 +105,20 @@ class Home extends Component {
     return (
       <React.Fragment>
         <CssBaseline />
-        <AppBar position="relative">
+        <AppBar position="static">
           <Toolbar>
-            <FlightIcon className={classes.icon} />
-            <Typography variant="h6" color="inherit" noWrap>
-              Sky-Gad
+            <IconButton
+              edge="start"
+              className={classes.FlightIcon}
+              color="inherit"
+              aria-label="menu"
+            >
+              <FlightIcon />
+            </IconButton>
+            <Typography variant="h6" className={classes.title}>
+              SKY-GAD
             </Typography>
+            <Button color="inherit" onClick={this.onSubmitClick}>Logout</Button>
           </Toolbar>
         </AppBar>
         <main>
