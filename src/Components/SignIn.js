@@ -59,7 +59,7 @@ class SignIn extends Component {
           <Typography style={{ color: "black" }} component="h1" variant="h5">
             Sign in
           </Typography>
-          <form className="form" noValidate>
+          <form className="form" action="/" method="post" noValidate>
             <TextField
               variant="outlined"
               margin="normal"
