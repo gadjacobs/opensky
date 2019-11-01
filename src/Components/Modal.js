@@ -11,7 +11,6 @@ import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
 import InputLabel from "@material-ui/core/InputLabel";
 import MenuItem from "@material-ui/core/MenuItem";
-import FormHelperText from "@material-ui/core/FormHelperText";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
 import Card from "@material-ui/core/Card";
@@ -99,7 +98,6 @@ export default function SimpleModal({ icao, name }) {
     arrivals
       .json()
       .then((arrival) => setArrivals(arrival))
-      .catch((err) => console.log(err));
   }
 
   async function fetchDepartures(icao, start, end) {
@@ -109,7 +107,6 @@ export default function SimpleModal({ icao, name }) {
     departures
       .json()
       .then((departure) => setDepartures(departure))
-      .catch((err) => console.log(err));
   }
 
   const handleClickOpen = () => {
@@ -159,25 +156,24 @@ export default function SimpleModal({ icao, name }) {
                     value={departureTime}
                     onChange={handleDepartureChange}
                   >
-                    <MenuItem value="">
-                      <em>None</em>
-                    </MenuItem>
-                    <MenuItem value={60}>60</MenuItem>
-                    <MenuItem value={120}>120</MenuItem>
-                    <MenuItem value={360}>360</MenuItem>
+                    <MenuItem value={60}>60 Minutes</MenuItem>
+                    <MenuItem value={360}>6 Hours</MenuItem>
+                    <MenuItem value={1440}>1 day</MenuItem>
                   </Select>
-                  <FormHelperText>Minutes</FormHelperText>
                 </FormControl>
               </Paper>
               <Paper className={classes.paper}>
-                {departures.map((departure, i) =>
-                  departures.length === 0 || departures === [] || departures === {} ? (
-                    <h4 id="simple-modal-description">
+                {  departures.length === 0 ||
+                  departures === [] ||
+                  departures === {} ||
+                  departures === null ? (
+                    <h4>
                       {
-                        "There are no flights within this period. Please check again later, or try another option."
+                        "There are no flights within this period. Please check again later or try another option."
                       }
                     </h4>
                   ) : (
+                departures.map((departure, i) =>
                     <Card key={i} className={classes.card}>
                       <CardContent>
                         <Typography
@@ -194,7 +190,7 @@ export default function SimpleModal({ icao, name }) {
                           className={classes.pos}
                           color="textSecondary"
                         >
-                          {timeConverter(departure.firstSeen)}
+                         On: {timeConverter(departure.firstSeen)}
                         </Typography>
                         <Typography
                           className={classes.title}
@@ -210,17 +206,17 @@ export default function SimpleModal({ icao, name }) {
                           className={classes.pos}
                           color="textSecondary"
                         >
-                          {timeConverter(departure.lastSeen)}
+                         By: {timeConverter(departure.lastSeen)}
                         </Typography>
                       </CardContent>
                     </Card>
                   )
-                  )}
+                )}
               </Paper>
             </Grid>
             <Grid item xs={12} sm={6}>
               <Paper className={classes.paper}>
-                <Typography component="h3">departures:</Typography>
+                <Typography component="h3">Arrivals:</Typography>
                 <FormControl className={classes.formControl}>
                   <InputLabel id="demo-simple-select-helper-label">
                     Last
@@ -231,25 +227,23 @@ export default function SimpleModal({ icao, name }) {
                     value={arrivalTime}
                     onChange={handleArrivalChange}
                   >
-                    <MenuItem value="">
-                      <em>None</em>
-                    </MenuItem>
-                    <MenuItem value={60}>60</MenuItem>
-                    <MenuItem value={120}>120</MenuItem>
-                    <MenuItem value={360}>360</MenuItem>
+                    <MenuItem value={60}>60 Minutes</MenuItem>
+                    <MenuItem value={360}>6 Hours</MenuItem>
+                    <MenuItem value={1440}>1 day</MenuItem>
                   </Select>
-                  <FormHelperText>Minutes</FormHelperText>
                 </FormControl>
               </Paper>
               <Paper className={classes.paper}>
-                {arrivals.map((arrival, i) =>
-                  arrivals.length === 0 || arrivals === [] || arrivals === {} ? (
-                    <h4 id="simple-modal-description">
-                      {
-                        "There are no flights within this period. Please check again later, or try another option."
-                      }
-                    </h4>
-                  ) : (
+                {
+                    arrivals.length === 0 || arrivals === [] || arrivals === {} ||
+                    arrivals === null ? (
+                      <h4 id="simple-modal-description">
+                        {
+                          "There are no flights within this period. Please check again later, or try another option."
+                        }
+                      </h4>
+                    ) : (
+                    arrivals.map((arrival, i) =>
                     <Card key={i} className={classes.card}>
                       <CardContent>
                         <Typography
@@ -266,7 +260,7 @@ export default function SimpleModal({ icao, name }) {
                           className={classes.pos}
                           color="textSecondary"
                         >
-                          {timeConverter(arrival.firstSeen)}
+                         On: {timeConverter(arrival.firstSeen)}
                         </Typography>
                         <Typography
                           className={classes.title}
@@ -282,12 +276,12 @@ export default function SimpleModal({ icao, name }) {
                           className={classes.pos}
                           color="textSecondary"
                         >
-                          {timeConverter(arrival.lastSeen)}
+                         By: {timeConverter(arrival.lastSeen)}
                         </Typography>
                       </CardContent>
                     </Card>
                   )
-                  )}
+                )}
               </Paper>
             </Grid>
           </Grid>
