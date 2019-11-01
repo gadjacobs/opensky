@@ -156,7 +156,7 @@ class Dashboard extends Component {
                       </Typography>
                     </CardContent>
                     <CardActions>
-                      <SimpleModal icao={cards[i]["icao"]} />
+                      <SimpleModal icao={cards[i]["icao"]} name={cards[i]["name"]} />
                     </CardActions>
                   </Card>
                 </Grid>

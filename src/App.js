@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
-import Dashboard from './Components/Dashboard';
+import Dashboard from "./Components/Dashboard";
 import SignIn from "./Components/SignIn";
 
 const icaos = [
@@ -38,31 +38,27 @@ class App extends Component {
     })
       .then((response) => response.json())
       .then((response) => {
-          var obj = {};
-          obj["name"] = response.name;
-          obj["icao"] = response.icao;
-          obj["location"] = response.location;
-
-          names.push(obj);
-          this.setState({ cities: names })
+        var obj = {};
+        obj["name"] = response.name;
+        obj["icao"] = response.icao;
+        obj["location"] = response.location;
+        names.push(obj);
+        this.setState({ cities: names });
       });
   };
 
   city = () => {
     icaos.map((icao) => this.airportList(icao));
-  }
+  };
 
   componentDidMount() {
-    // fetch("https://opensky-network.org/api/states/all")
-    //   .then((response) => response.json())
-    //   .then((states) => this.setState({ cities: states.states }));
     this.city();
   }
 
   onRouteChange = (route) => {
     if (route === "home") {
       this.setState({ isSignedIn: true });
-    } else if (route === "signout") {
+    } else if (route === "signin") {
       this.setState({ isSignedIn: false });
     }
     this.setState({ route: route });
@@ -72,7 +68,10 @@ class App extends Component {
     return (
       <div>
         {this.state.route === "home" ? (
-          <Dashboard onRouteChange={this.onRouteChange} names={this.state.cities} />
+          <Dashboard
+            onRouteChange={this.onRouteChange}
+            names={this.state.cities}
+          />
         ) : (
           <div className="App">
             <header className="App-header">
